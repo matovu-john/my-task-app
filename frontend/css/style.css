@@ -42,11 +42,12 @@ body {
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
-  padding: 3px 10px;
+  padding: 8px 10px;
   background-color: var(--bg-color-main);
-  margin: 0 3px;
+  margin: 8px -10px;
   white-space: nowrap;
   overflow: auto;
+  gap: 8px;
 }
 
 a {
