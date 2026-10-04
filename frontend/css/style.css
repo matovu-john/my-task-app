@@ -45,6 +45,8 @@ body {
   padding: 3px 10px;
   background-color: var(--bg-color-main);
   margin: 0 3px;
+  white-space: nowrap;
+  overflow: auto;
 }
 
 a {
@@ -53,6 +55,7 @@ a {
   border-radius: 8px;
   text-decoration: none;
   color: var(--color-primary);
+ / line-break: none
 }
 
 #active {
@@ -61,7 +64,7 @@ a {
 }
 
 .tasks-display {
-  border: 1px solid var(--bg-color-main);
+/  border: 1px solid var(--bg-color-main);
  / min-height: 100dvh;
   margin: 3px 3px;
   padding: 10px 7px;
