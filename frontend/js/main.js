@@ -1,14 +1,15 @@
 const API_BASE = location.hostname === 'localhost' ? 'http://localhost:5000' : 'https://padhox-task-app-backend.onrender.com';
 
+import {renderTasks} from "./modules/ui/renderTasks.js";
+
 const tasksDisplay = document.querySelector('.tasks-display');
 const taskButtons = document.querySelectorAll('a');
-import {tasksDisplayManager} from "./modules/ui/tasksDisplayManager.js";
+
 
 taskButtons.forEach((button) => {  
     
     button.addEventListener('click', (event) => {
         event.preventDefault();
-       // history.pushState(null, '', button.href);
         
         const activeBtn = document.querySelector('#active');
         
@@ -17,9 +18,7 @@ taskButtons.forEach((button) => {
             button.setAttribute('id', 'active');
         }
 
-        const url = API_BASE + button.getAttribute('href');
-
-        renderTasks(url);
+        fetchData(`${API_BASE}${button.getAttribute('href')}`).then(tasks => renderTasks(tasksDisplay, tasks));
 });
     });
 
@@ -27,17 +26,10 @@ taskButtons.forEach((button) => {
 async function fetchData(url) {
 
     let res = await fetch(url);
-    const tasks = await res.json();
+    const data = await res.json();
 
-    return tasks;  
+    return data;  
 }
 
 
-async function renderTasks(url) {
-     const tasks = await fetchData(url);
-
-    tasksDisplayManager(tasksDisplay, tasks);
-}
-
-
-renderTasks(API_BASE + document.querySelector('#active').getAttribute('href'));
+fetchData(API_BASE + document.querySelector('#active').getAttribute('href')).then(tasks => renderTasks(tasksDisplay, tasks));
