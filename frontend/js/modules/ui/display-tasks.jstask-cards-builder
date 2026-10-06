@@ -1,4 +1,4 @@
-export function create_container_for_completed_task(task) {
+export function build_card_for_completed_task(task) {
     
         const taskContainer = document.createElement('div');
         taskContainer.classList.add('task');
@@ -43,7 +43,7 @@ export function create_container_for_completed_task(task) {
 }
 
 
-export function create_container_for_incompletd_task(task) {
+export function build_card_for_incompletd_task(task) {
     
         const taskContainer = document.createElement('div');
         taskContainer.classList.add('task');
@@ -88,7 +88,7 @@ export function create_container_for_incompletd_task(task) {
 }
 
 
-export function create_container_for_abandoned_task(task) {
+export function build_card_for_abandoned_task(task) {
     
         const taskContainer = document.createElement('div');
         taskContainer.classList.add('task');
