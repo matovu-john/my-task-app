@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page content goes here -->
+
+  <div class='task-app-wrapper'>
+
+  <header class='header'>
+    <div class='header-left'>
+    <h1>My Tasks</h1>
+    <p>Today</p>
+      </div>
+
+    <div class='header-rigth'>
+      <a href='/pages/login/index.html'>Login</a>
+    </div>
+  </header>
+
+  <main class='main'>
+    <div class='buttons'>
+      <a href='/api/tasks?status=all' id='active' class='filter-btn'>All</a>
+      <a href='/api/tasks?status=incomplete' class='filter-btn'>In progress</a>
+      <a href='/api/tasks?status=completed' class='filter-btn'>Completed</a>
+      <a href='/api/tasks?status=abandoned' class='filter-btn'>Abandoned</a>
+      
+    </div>
+
+    <div class='tasks-display'>
+      <div class='task completed-task'>
+        <div class='radio--task-data'>
+        <input type='radio' class='radio' checked/>
+        <div class='task-data'>
+          <p class='task-title'>Do homework</p>
+          <span class='time'>
+            <small class='emoji'>⌛</small>
+            <small>11:32AM</small>
+          </span>
+        </div>
+        </div>
+
+        <div class='task-btns'>
+          <span class='completed'>Completed</span>
+          <button class='delete-btn'>Delete</button>
+        </div>
+      </div>
+
+      <div class='task incomplete-task'>
+        <div class='radio--task-data'>
+        <input type='radio' class='radio'/>
+        <div class='task-data'>
+          <p class='task-title'>Go to gym</p>
+            <small>11:32AM</small>
+        </div>
+        </div>
+
+        <div class='task-btns'>
+          <button class='abandon-btn'>Abandon</button>
+          <button class='delete-btn'>Delete</button>
+        </div>
+      </div>
+
+      <div class='task abandoned-task'>
+        <div class='radio--task-data'>
+        <span class='radio'>&#x26D4;</span>
+        <div class='task-data'>
+          <p class='task-title'>Go to gym</p>
+          <span class='time'>
+            <small class='emoji'>⌛</small>
+            <small>11:32AM</small>
+          </span>
+        </div>
+        </div>
+
+        <div class='task-btns'>
+          <button class='return'>Return</button>
+          <button class='delete-btn'>Delete</button>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class='task-input-container'>
+      <input type='text' class='task-input' placeholder='Enter task'>
+      <button class='add-task-btn'>Save</button>
+    </div>
+  </main>
+    </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
